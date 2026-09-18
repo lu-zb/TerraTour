@@ -148,9 +148,7 @@
     transform: scale(1.05);
 }
 
-/* ====================
-   图片说明
-==================== */
+/* 图片说明 */
 
 .hero-caption {
     position: absolute;
@@ -367,6 +365,35 @@
     color: var(--color-text-muted);
     font-size: var(--font-size-base);
     line-height: 1.8;
+}
+
+/* 刷新按钮 */
+.spots-refresh {
+    margin-top: var(--space-base);
+}
+
+/* 让四张卡片保持相同高度 */
+
+.spots-grid .card {
+    display: flex;
+    flex-direction: column;
+
+    height: 100%;
+}
+
+/* 保留向上浮动效果，避免放大卡片造成横向溢出 */
+
+.spots-grid .card:hover,
+.spots-grid .card:focus-within {
+    transform: translateY(-2px);
+}
+
+.spots-grid .card-body {
+    flex: 1;
+}
+
+.spots-grid .card-description {
+    flex: 1;
 }
 
 /* 默认桌面：四列景点卡片 */

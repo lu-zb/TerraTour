@@ -23,8 +23,9 @@
             </ul>
 
             <div class="auth-actions">
-                <button type="button" class="btn btn-secondary">登录</button>
-                <button type="button" class="btn btn-primary">注册</button>
+                <button class="btn btn-secondary" id="login-button" type="button">登录</button>
+                <button class="btn btn-primary" id="register-button" type="button">注册</button>
+                <button class="btn btn-secondary" id="profile-button" type="button" hidden>我的</button>
             </div>
 
             <div class="mobile-actions">
@@ -49,7 +50,7 @@
             
             <!-- 右侧图片展示 -->
             <figure class="hero-media">
-                <a class="hero-image-link" href="detail.html?id=zhangjiajie">
+                <a class="hero-image-link" href="zhangjiajie.html">
                     <img class="hero-image" src="assets/images/zhangjiajie.jpg" alt="张家界"/>
                 </a>
 
@@ -74,6 +75,7 @@
                 <p class="spots-kicker">Place to fall in love with</p>
                     <h2 id="spots-title">热门景点</h2>
                 <p class="spots-description">脚步踏过长路，眼底盛满山河。</p>
+                <button class="btn btn-text spots-refresh" id="refresh-spots" type="button"> 换一批景点 </button>
             </header>
             
             <div class="spots-grid container" id="spots-list">
@@ -181,50 +183,61 @@
     </div>
     </footer>
 
-    <!-- 登录注册对话框 -->
+    <!-- 登录、注册、用户资料弹窗 -->
     <dialog class="auth-dialog" id="auth-dialog">
-        <h2 id="auth-dialog-title">欢迎来到 Terra-Tour</h2>
+        <h2 id="auth-title">登录</h2>
 
-        <button class="dialog-close" type="button">关闭</button>
+        <button class="dialog-close" id="auth-close" type="button">关闭</button>
 
-        <div class="auth-tabs">
-            <button class="auth-tab is-active" type="button">登录</button>
-            <button class="auth-tab" type="button">注册 </button>
+        <div class="auth-tabs" id="auth-tabs">
+            <button class="auth-tab is-active" data-mode="login" type="button">登录</button>
+            <button class="auth-tab" data-mode="register" type="button">注册</button>
         </div>
 
-        <form class="auth-form">
-            <div class="form-group">
-                <label class="form-label" for="auth-email"> 邮箱 <span class="required-mark">*</span></label>
+        <form class="auth-form" id="auth-form">
+            <div class="form-group" id="name-group" hidden>
+                <label class="form-label" for="auth-name">用户名</label>
+                <input
+                    class="form-input"
+                    id="auth-name"
+                    type="text"
+                    minlength="2"
+                    maxlength="20"
+                    placeholder="请输入用户名">
+            </div>
 
+            <div class="form-group">
+                <label class="form-label" for="auth-email">邮箱</label>
                 <input
                     class="form-input"
                     id="auth-email"
-                    name="email"
                     type="email"
-                    autocomplete="email"
-                    placeholder="学号@ncu.edu.cn"
+                    placeholder="请输入邮箱"
                     required>
-
-                <small class="form-error" id="email-error"></small>
             </div>
 
-            <div class="form-group">
-                <label class="form-label" for="auth-password"> 密码 <span class="required-mark">*</span></label>
+            <div class="form-group" id="password-group">
+                <label class="form-label" for="auth-password">密码</label>
                 <input
                     class="form-input"
                     id="auth-password"
-                    name="password"
                     type="password"
-                    autocomplete="current-password"
                     minlength="6"
-                    placeholder="至少输入6位数字或字符"
+                    placeholder="至少输入6位字符"
                     required>
-
-                    <small class="form-error" id="password-error"></small>
             </div>
 
-            <button class="btn btn-primary" type="submit">登录</button>
+            <button class="btn btn-primary" id="auth-submit" type="submit">登录</button>
+
+            <div class="profile-actions" id="profile-actions" hidden>
+                <button class="btn btn-secondary" id="logout-button" type="button">退出登录</button>
+                <button class="btn btn-danger" id="delete-button" type="button">删除账号</button>
+            </div>
         </form>
     </dialog>
+
+    <script src="js/common.js"></script>
+    <script src="js/page/index.js"></script>
+
 </body>
 </html>

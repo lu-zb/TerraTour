@@ -467,6 +467,29 @@
     box-shadow: var(--shadow-sm);
 }
 
+/* 简化版用户资料操作 */
+[hidden] {
+    display: none !important;
+}
+
+.profile-actions {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-sm);
+}
+
+.btn-danger {
+    color: var(--color-danger);
+    background-color: transparent;
+    border-color: var(--color-danger);
+}
+
+.btn-danger:hover {
+    color: var(--color-surface);
+    background-color: var(--color-danger);
+    border-color: var(--color-danger);
+}
+
 /* 卡片样式 */
 
 .card {
@@ -574,13 +597,23 @@
         font-size: 1.25rem;
     }
 
-    .nav-list,
-    .auth-actions {
+    .nav-list {
         display: none;
     }
 
+    .auth-actions {
+        display: flex;
+        gap: var(--space-xs);
+    }
+
+    .auth-actions .btn {
+        min-height: 40px;
+        padding-inline: var(--space-sm);
+        font-size: var(--font-size-sm);
+    }
+
     .mobile-actions {
-        display: block;
+        display: none;
     }
 
     .auth-dialog {
@@ -589,6 +622,10 @@
     }
 
     .footer-inner {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .profile-actions {
         grid-template-columns: minmax(0, 1fr);
     }
 }
