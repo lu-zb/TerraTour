@@ -6,6 +6,8 @@
     --color-primary-light: #f472b6;
     --color-action: #0284c7;
     --color-danger: #dc2626;
+    --color-primary-dark: #be185d;
+    --color-action-dark: #0369a1;
 
     /* 背景和文字颜色 */
     --color-page: #fdf2f8;
@@ -142,21 +144,15 @@ section {
     scroll-margin-top: calc(var(--header-height) + var(--space-base));
 }
 
+/* tab聚焦样式 */
 :focus-visible {
     outline: 3px solid var(--color-action);
     outline-offset: 3px;
     box-shadow: 0 0 0 6px rgba(2, 132, 199, 0.18);
 }
 
+/* 选中文字样式 */
 ::selection {
     color: var(--color-surface);
     background-color: var(--color-primary);
-}
-
-.container {
-    width: min(
-        calc(100% - 2 * var(--space-md)),
-        var(--container-width)
-    );
-    margin-inline: auto;
 }

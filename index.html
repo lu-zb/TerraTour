@@ -5,15 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TerraTour · 探索世界</title>
     <link rel="stylesheet" href="css/basic.css">
+    <link rel="stylesheet" href="css/common.css">
 </head>
 <body>
-    <a href="#main-content"> 跳到主要内容 </a>
     <!-- 导航栏 -->
-    <header>
-        <nav>
-            <a href="#home">Terra-Tour</a>
+    <header class="site-header">
+        <nav class="top-nav container">
+            <a class="brand" href="#home">Terra-Tour</a>
 
-            <ul id="main-menu">
+            <ul class="nav-list" id="main-menu">
                 <li><a href="#spots">探索</a></li>
                 <li><a href="#planning">计划出行</a></li>
                 <li><a href="#footprints">足迹</a></li>
@@ -21,28 +21,28 @@
                 <li><a href="explore.html#destination-search">搜索</a></li>
             </ul>
 
-            <div>
-                <button type="button">登录</button>
-                <button type="button">注册</button>
+            <div class="auth-actions">
+                <button type="button" class="btn btn-secondary">登录</button>
+                <button type="button" class="btn btn-primary">注册</button>
             </div>
 
-            <div>
-                <button type="button">菜单</button>
+            <div class="mobile-actions">
+                <button type="button" class="menu-toggle" aria-controls="main-menu" aria-expanded="false">菜单</button>
             </div>
         </nav>
     </header>
 
     <main id="main-content">
         <!-- 第一屏: Hero -->
-        <section id="home">
+        <section id="home" class="container">
             <div>
                 <p> 山河辽阔，人间烟火，皆可奔赴</p>
                 <p>A journey of a thousand miles begins with a single step.</p>
                 <h1 id="hero-title">邂逅你的下一片风景</h1>
                 <p>暮色漫过连绵的山脊&nbsp;星光落在漫漫长路&nbsp;不必急于抵达终点&nbsp;旅途本身，就是风景</p>
                 <div>
-                    <a href="explore.html">探索</a>
-                    <a href="plan.html">计划出行</a>
+                    <a href="explore.html" class="btn btn-primary">探索</a>
+                    <a href="plan.html" class="btn btn-secondary">计划出行</a>
                 </div>
             </div>
             
@@ -69,24 +69,24 @@
 
         <!-- 第二屏：热门景点 -->
         <section id="spots">
-            <header>
+            <header class="container">
                 <p>Place to fall in love with</p>
                     <h2 id="spots-title">热门景点</h2>
                 <p>脚步踏过长路，眼底盛满山河。</p>
             </header>
             
-            <div id="spots-list">
+            <div id="spots-list" class="container">
                 <!-- 景点卡片，动态生成 -->
             </div>
 
-            <aside id="favorites">
+            <aside id="favorites" class="container">
                 <p>路过人间山河，收藏世间辽阔</p>
-                <a href="favorites.html">查看我的收藏</a>
+                <a href="favorites.html" class="btn btn-text">查看我的收藏</a>
             </aside>
         </section>
 
         <!-- 第三屏：计划出行 -->
-        <section id="planning">
+        <section id="planning" class="container">
             <div>
                 <figure>
                     <img src="assets/images/westlake.jpg" alt="西湖">
@@ -142,7 +142,7 @@
                     </li>
                 </ol>
 
-                <a href="plan.html">
+                <a href="plan.html" class="btn btn-primary">
                     规划旅行
                 </a>
             </article>
@@ -151,14 +151,13 @@
 
         <!-- 第四屏：足迹 -->
         <section id="footprints">
-            <header>
+            <header class="container">
             <p>Little moments, lasting memories</p>
             <h2 id="footprints-title"> 记录走过的路</h2>
             <p>把世界变成自己的旅行相册，留住那些不想忘记的瞬间。</p>
-            <a href="footprints.html">我的足迹</a>
+            <a href="footprints.html" class="btn btn-secondary">我的足迹</a>
             </header>
-
-            <div>
+            <div class="container">
                 <!-- 动态生成记录的足迹 -->
             </div>
 
@@ -169,56 +168,63 @@
     </main>
 
     <!-- 页脚 -->
-    <footer>
-        <div>
-            <a href="#home">Terra-Tour</a>
+    <footer class="site-footer">
+    <div class="footer-inner container">
+        <div class="footer-brand" id="about">
+            <a class="footer-logo" href="#home">Terra-Tour</a>
             <p>Made for the wanderer in you.</p>
         </div>
 
-        <nav aria-label="底部导航">
+        <nav class="footer-nav" id="contact">
             <a href="#about">关于 Terra-Tour</a>
             <a href="#contact">联系我们</a>
         </nav>
+    </div>
     </footer>
 
     <!-- 登录注册对话框 -->
-    <dialog id="auth-dialog">
+    <dialog class="auth-dialog" id="auth-dialog">
         <h2 id="auth-dialog-title">欢迎来到 Terra-Tour</h2>
 
-        <button type="button">关闭</button>
+        <button class="dialog-close" type="button">关闭</button>
 
-        <div>
-            <button type="button">登录</button>
-            <button type="button">注册 </button>
+        <div class="auth-tabs">
+            <button class="auth-tab is-active" type="button">登录</button>
+            <button class="auth-tab" type="button">注册 </button>
         </div>
 
-        <form>
-            <div>
-                <label for="auth-email">邮箱</label>
+        <form class="auth-form">
+            <div class="form-group">
+                <label class="form-label" for="auth-email"> 邮箱 <span class="required-mark">*</span></label>
 
                 <input
+                    class="form-input"
                     id="auth-email"
                     name="email"
                     type="email"
                     autocomplete="email"
-                    required
-                >
+                    placeholder="学号@ncu.edu.cn"
+                    required>
+
+                <small class="form-error" id="email-error"></small>
             </div>
 
-            <div>
-                <label for="auth-password">密码</label>
-
+            <div class="form-group">
+                <label class="form-label" for="auth-password"> 密码 <span class="required-mark">*</span></label>
                 <input
+                    class="form-input"
                     id="auth-password"
                     name="password"
                     type="password"
                     autocomplete="current-password"
                     minlength="6"
-                    required
-                >
+                    placeholder="至少输入6位数字或字符"
+                    required>
+
+                    <small class="form-error" id="password-error"></small>
             </div>
 
-            <button type="submit">登录</button>
+            <button class="btn btn-primary" type="submit">登录</button>
         </form>
     </dialog>
 </body>
