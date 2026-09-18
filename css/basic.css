@@ -1,0 +1,162 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap");
+
+:root {
+    /* 颜色 */
+    --color-primary: #db2777;
+    --color-primary-light: #f472b6;
+    --color-action: #0284c7;
+    --color-danger: #dc2626;
+
+    /* 背景和文字颜色 */
+    --color-page: #fdf2f8;
+    --color-surface: #ffffff;
+    --color-heading: #831843;
+    --color-text: #1e293b;
+    --color-text-muted: #475569;
+    --color-border: #fbcfe8;
+
+    /* 极光渐变 */
+    --gradient-aurora: linear-gradient(
+        135deg,
+        #fdf2f8 0%,
+        #fce7f3 35%,
+        #e0f2fe 70%,
+        #ffffff 100%
+    );
+
+    /* 字体 */
+    --font-heading: "Playfair Display", "Noto Serif SC", serif;
+    --font-body: "Inter", "Noto Sans SC", "PingFang SC",
+        "Microsoft YaHei", sans-serif;
+
+    /* 字号 */
+    --font-size-sm: 0.875rem;
+    --font-size-base: 1rem;
+    --font-size-h3: 1.25rem;
+    --font-size-h2: 2rem;
+    --font-size-h1: 3rem;
+
+    /* 间距：以 8px 为基础 */
+    --space-xs: 4px;
+    --space-sm: 8px;
+    --space-base: 16px;
+    --space-md: 24px;
+    --space-lg: 32px;
+    --space-xl: 48px;
+    --space-2xl: 64px;
+    --space-3xl: 96px;
+
+    /* 圆角 */
+    --radius-sm: 6px;
+    --radius-md: 12px;
+    --radius-lg: 20px;
+    --radius-pill: 999px;
+
+    /* 阴影 */
+    --shadow-sm: 0 4px 12px rgba(131, 24, 67, 0.08);
+    --shadow-md: 0 12px 32px rgba(131, 24, 67, 0.12);
+    --shadow-lg: 0 20px 48px rgba(131, 24, 67, 0.18);
+
+    /* 页面布局 */
+    --container-width: 1200px;
+    --header-height: 72px;
+
+    /* 动效 */
+    --transition-fast: 150ms ease;
+    --transition-normal: 250ms ease;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* 平滑滚动 */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-width: 320px;
+    min-height: 100vh;
+    margin: 0;
+
+    color: var(--color-text);
+    background: var(--gradient-aurora);
+
+    font-family: var(--font-body);
+    font-size: var(--font-size-base);
+    line-height: 1.5;
+}
+
+h1,h2,h3,p,figure {
+    margin-top: 0;
+}
+
+h1,h2,h3 {
+    color: var(--color-heading);
+    font-family: var(--font-heading);
+    line-height: 1.2;
+}
+
+h1 {
+    /* 随窗口缩放 */
+    font-size: clamp(2rem, 5vw, var(--font-size-h1));
+}
+
+h2 {
+    font-size: var(--font-size-h2);
+}
+
+h3 {
+    font-size: var(--font-size-h3);
+}
+
+a {
+    /* 继承父类颜色 */
+    color: inherit;
+    text-decoration: none;
+}
+
+button,input {
+    font: inherit;
+}
+
+button,a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+button {
+    /* 手型指针 */
+    cursor: pointer;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+section {
+    scroll-margin-top: calc(var(--header-height) + var(--space-base));
+}
+
+:focus-visible {
+    outline: 3px solid var(--color-action);
+    outline-offset: 3px;
+    box-shadow: 0 0 0 6px rgba(2, 132, 199, 0.18);
+}
+
+::selection {
+    color: var(--color-surface);
+    background-color: var(--color-primary);
+}
+
+.container {
+    width: min(
+        calc(100% - 2 * var(--space-md)),
+        var(--container-width)
+    );
+    margin-inline: auto;
+}
