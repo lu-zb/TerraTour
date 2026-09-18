@@ -490,6 +490,33 @@
     border-color: var(--color-danger);
 }
 
+/* 收藏按钮 */
+.btn-favorite {
+    color: var(--color-primary);
+    background-color: var(--color-surface);
+    border-color: var(--color-primary-light);
+}
+
+.btn-favorite:hover,
+.btn-favorite.is-favorite {
+    color: var(--color-surface);
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+}
+
+.favorite-icon {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.8;
+}
+
+.btn-favorite.is-favorite .favorite-icon {
+    fill: currentColor;
+}
+
 /* 卡片样式 */
 
 .card {
@@ -583,6 +610,10 @@
     margin-top: var(--space-sm);
 }
 
+.destination-card .card-actions {
+    justify-content: space-between;
+}
+
 /* 手机：小于 768px */
 @media (max-width: 767px) {
     .container {
@@ -627,6 +658,10 @@
 
     .profile-actions {
         grid-template-columns: minmax(0, 1fr);
+    }
+
+    .destination-card .card-actions .btn {
+        flex: 1;
     }
 }
 /* 768px～1023px */

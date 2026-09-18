@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="css/basic.css">
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/page/detail.css">
+    <script src="js/navigation.js"></script>
 </head>
 
 <body>
@@ -16,13 +17,7 @@
         <nav class="detail-nav container">
             <a class="brand" href="index.html">Terra-Tour</a>
 
-            <button
-                class="btn btn-secondary"
-                type="button"
-                onclick="history.back()"
-            >
-                ← 返回
-            </button>
+            <a class="btn btn-secondary" href="index.html" data-return>← 返回</a>
         </nav>
     </header>
 
@@ -96,6 +91,10 @@
                         景区海拔较高，应放慢行走速度并注意保暖。
                     </p>
 
+                    <button class="btn btn-favorite" type="button" data-favorite="jiuzhaigou">
+                        收藏
+                    </button>
+
                     <a class="btn btn-primary" href="plan.html">
                         计划这次旅行
                     </a>
@@ -117,5 +116,6 @@
             </nav>
         </div>
     </footer>
+    <script src="js/destinations.js"></script>
 </body>
 </html>

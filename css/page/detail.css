@@ -248,6 +248,10 @@
     width: 100%;
 }
 
+.destination-info .btn + .btn {
+    margin-top: var(--space-sm);
+}
+
 /* 平板 */
 
 @media (max-width: 1023px) {
@@ -277,7 +281,7 @@
     }
 
     .destination-hero {
-        height: 460px;
+        height: 380px;
     }
 
     .destination-heading {
@@ -299,5 +303,9 @@
 
     .destination-info {
         position: static;
+    }
+
+    .destination-info dl div {
+        align-items: flex-start;
     }
 }

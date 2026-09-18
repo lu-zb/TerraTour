@@ -1,16 +1,49 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>收藏</title>
+    <title>我的收藏 · Terra-Tour</title>
     <link rel="stylesheet" href="css/basic.css">
     <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/page/destination.css">
+    <script src="js/navigation.js"></script>
 </head>
 <body>
-    <header>
-        <a href="index.html">返回</a>
-        <h1>我的收藏</h1>
+    <header class="site-header">
+        <nav class="detail-nav container">
+            <a class="brand" href="index.html">Terra-Tour</a>
+            <a class="btn btn-secondary" href="index.html" data-return>← 返回</a>
+        </nav>
     </header>
+
+    <main class="destination-page-main container">
+        <header class="page-heading">
+            <p class="page-kicker">Places worth remembering</p>
+            <h1>我的收藏</h1>
+            <p id="favorites-count">你还没有收藏景点。</p>
+        </header>
+
+        <section class="results-section">
+            <h2>收藏的景点</h2>
+            <div class="destination-grid" id="favorites-list"></div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-inner container">
+            <div class="footer-brand">
+                <a class="footer-logo" href="index.html">Terra-Tour</a>
+                <p>Made for the wanderer in you.</p>
+            </div>
+            <nav class="footer-nav">
+                <a href="index.html#about">关于 Terra-Tour</a>
+                <a href="index.html#contact">联系我们</a>
+            </nav>
+        </div>
+    </footer>
+
+    <script src="js/destinations.js"></script>
+    <script src="js/page/favorites.js"></script>
 </body>
 </html>
