@@ -6,6 +6,7 @@
     <title>TerraTour · 探索世界</title>
     <link rel="stylesheet" href="css/basic.css">
     <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/page/index.css">
 </head>
 <body>
     <!-- 导航栏 -->
@@ -34,134 +35,132 @@
 
     <main id="main-content">
         <!-- 第一屏: Hero -->
-        <section id="home" class="container">
-            <div>
-                <p> 山河辽阔，人间烟火，皆可奔赴</p>
-                <p>A journey of a thousand miles begins with a single step.</p>
-                <h1 id="hero-title">邂逅你的下一片风景</h1>
-                <p>暮色漫过连绵的山脊&nbsp;星光落在漫漫长路&nbsp;不必急于抵达终点&nbsp;旅途本身，就是风景</p>
-                <div>
+        <section id="home" class="hero container">
+            <div class="hero-content">
+                <p class="hero-eyebrow"> 山河辽阔，人间烟火，皆可奔赴</p>
+                <p class="hero-kicker"> A journey of a thousand miles begins with a single step.</p>
+                <h1 class="hero-title" id="hero-title">邂逅你的下一片风景</h1>
+                <p class="hero-description">暮色漫过连绵的山脊，星光落在漫漫长路<br>不必急于抵达终点，旅途本身，就是风景</p>
+                <div class="hero-actions">
                     <a href="explore.html" class="btn btn-primary">探索</a>
                     <a href="plan.html" class="btn btn-secondary">计划出行</a>
                 </div>
             </div>
             
             <!-- 右侧图片展示 -->
-            <figure>
-                <a href="detail.html?id=zhangjiajie">
-                    <img src="assets/images/zhangjiajie.jpg" alt="张家界"/>
+            <figure class="hero-media">
+                <a class="hero-image-link" href="detail.html?id=zhangjiajie">
+                    <img class="hero-image" src="assets/images/zhangjiajie.jpg" alt="张家界"/>
                 </a>
 
-                <figcaption>
+                <figcaption class="hero-caption">
                     <span>山野之间，烟火深处</span>
                     <strong>武陵源里三千峰，峰峰拔地玉玲珑</strong>
                 </figcaption>
 
-                <a href="explore.html">View More</a>
+                <a class="hero-view-more" href="explore.html">View More</a>
             </figure>
             
-            <aside>
+            <aside class="hero-quote">
                 <span>Follow your own way.</span>
             </aside>
 
-            <a href="#spots">滚动发现更多</a>
+            <a class="hero-scroll" href="#spots">滚动发现更多</a>
         </section> 
 
         <!-- 第二屏：热门景点 -->
-        <section id="spots">
-            <header class="container">
-                <p>Place to fall in love with</p>
+        <section class="spots-section" id="spots">
+            <header class="spots-header container">
+                <p class="spots-kicker">Place to fall in love with</p>
                     <h2 id="spots-title">热门景点</h2>
-                <p>脚步踏过长路，眼底盛满山河。</p>
+                <p class="spots-description">脚步踏过长路，眼底盛满山河。</p>
             </header>
             
-            <div id="spots-list" class="container">
+            <div class="spots-grid container" id="spots-list">
                 <!-- 景点卡片，动态生成 -->
             </div>
 
-            <aside id="favorites" class="container">
-                <p>路过人间山河，收藏世间辽阔</p>
+            <aside class="favorites-banner container" id="favorites">
+                <p class="favorites-copy">路过人间山河，收藏世间辽阔</p>
                 <a href="favorites.html" class="btn btn-text">查看我的收藏</a>
             </aside>
         </section>
 
         <!-- 第三屏：计划出行 -->
-        <section id="planning" class="container">
-            <div>
-                <figure>
-                    <img src="assets/images/westlake.jpg" alt="西湖">
-                    <figcaption>
+        <section class="planning-section container" id="planning">
+            <div class="planning-visual">
+                <figure class="planning-photo">
+                    <img src="assets/images/westlake.jpg" alt="西湖风景">
+
+                    <figcaption class="planning-caption">
                         <span>Make room for a little wonder</span>
-                        <strong>欲把西湖比西子，浓妆淡抹总相宜</strong>
+                        <strong> 欲把西湖比西子，浓妆淡抹总相宜 </strong>
                     </figcaption>
                 </figure>
 
-                <aside>
-                    <p>我的旅行日记</p>
-                    <span>示例</span>
+                <aside class="journal-card">
+                    <p class="journal-label">我的旅行日记</p>
+                    <span class="journal-badge">示例</span>
+
                     <h3>西湖游记</h3>
-                    <p>走过西湖的每一条小路，感受着湖光山色的美丽。无论是清晨的薄雾，还是傍晚的夕阳，都让人流连忘返。</p>
+
+                    <p class="journal-text"> 走过西湖的每一条小路，感受着湖光山色的美丽。无论是清晨的薄雾，还是傍晚的夕阳，都让人流连忘返。</p>
                 </aside>
             </div>
 
-            <article>
-                <p>From someday to let’s go</p>
+            <article class="planning-content">
+                <p class="planning-kicker">From someday to let’s go</p>
 
-                <h2 id="planning-title">
-                    让“有空再去” 变成 “准备出发”
-                </h2>
+                <h2 id="planning-title"> 让“有空再去”变成“准备出发”</h2>
 
-                <p>
-                    旅行不必从一份复杂的攻略开始。
-                    三个小步骤，安排一场属于自己的旅行。
-                </p>
+                <p class="planning-description">旅行不必从一份复杂的攻略开始。三个小步骤，安排一场属于自己的旅行。</p>
 
-                <ol>
-                    <li>
-                    <span>01</span>
-                    <div>
-                        <h3>选几个心动的地方</h3>
-                        <p>规划旅行的路线</p>
-                    </div>
+                <ol class="planning-steps">
+                    <li class="planning-step">
+                        <span class="planning-number">01</span>
+
+                        <div>
+                            <h3>选几个心动的地方</h3>
+                            <p>规划旅行的路线</p>
+                        </div>
                     </li>
 
-                    <li>
-                    <span>02</span>
-                    <div>
-                        <h3>留一段出发的时间</h3>
-                        <p>安排日期、天数和预算，把想法写进计划</p>
-                    </div>
+                    <li class="planning-step">
+                        <span class="planning-number">02</span>
+
+                        <div>
+                            <h3>留一段出发的时间</h3>
+                            <p>安排日期、天数和预算，把想法写进计划</p>
+                        </div>
                     </li>
 
-                    <li>
-                    <span>03</span>
-                    <div>
-                        <h3>出发，留下你的故事</h3>
-                        <p>抵达之后打个卡，让每段旅程都有回响。</p>
-                    </div>
+                    <li class="planning-step">
+                        <span class="planning-number">03</span>
+
+                        <div>
+                            <h3>出发，留下你的故事</h3>
+                            <p>抵达之后打个卡，让每段旅程都有回响。</p>
+                        </div>
                     </li>
                 </ol>
 
-                <a href="plan.html" class="btn btn-primary">
-                    规划旅行
-                </a>
+                <a class="btn btn-primary" href="plan.html"> 开始规划旅行 </a>
             </article>
-            
         </section>
 
         <!-- 第四屏：足迹 -->
-        <section id="footprints">
-            <header class="container">
-            <p>Little moments, lasting memories</p>
+        <section class="footprints-section" id="footprints">
+            <header class="footprints-header container">
+            <p class="footprints-kicker">Little moments, lasting memories</p>
             <h2 id="footprints-title"> 记录走过的路</h2>
-            <p>把世界变成自己的旅行相册，留住那些不想忘记的瞬间。</p>
+            <p class="footprints-description">把世界变成自己的旅行相册，留住那些不想忘记的瞬间。</p>
             <a href="footprints.html" class="btn btn-secondary">我的足迹</a>
             </header>
-            <div class="container">
+            <div class="footprints-grid container" id="footprints-list">
                 <!-- 动态生成记录的足迹 -->
             </div>
 
-            <p>
+            <p class="footprints-quote">
             Go somewhere new. Come back a little different.
             </p>
         </section>
