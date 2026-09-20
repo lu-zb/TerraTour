@@ -3,30 +3,7 @@ TERRA-TOUR
 ## 建设路线
 
 #### 创建项目骨架
-```
-travelling/
-├── index.html
-├── explore.html
-├── detail.html
-├── plan.html
-├── favorites.html
-├── footprints.html
-├── css/
-│   ├── base.css
-│   ├── common.css
-│   └── page/
-│       ├── index.css
-│       └── destination.css
-├── js/
-│   ├── dom.js
-│   ├── common.js
-│   ├── navigation.js
-│   └── page/
-│       ├── index.js
-│       └── explore.js
-└── assets/
-    └── images/
-```
+
 #### 首页index语义结构
 ```html
 header

@@ -35,6 +35,7 @@ function renderUser() {
 }
 
 function openAuth(mode) {
+    setMenuOpen(false);
     const user = getCurrentUser();
 
     authMode = mode;
@@ -197,3 +198,47 @@ document.querySelectorAll("[data-mode]").forEach(tab => {
 });
 
 renderUser();
+
+// 复用同一套导航；窄屏时将列表放到按钮后，保持键盘访问顺序。
+const menuButton = document.querySelector(".menu-toggle");
+const mainMenu = document.querySelector("#main-menu");
+const topNav = document.querySelector(".top-nav");
+const narrowNavigation = window.matchMedia("(max-width: 1023px)");
+
+function setMenuOpen(open, returnFocus = false) {
+    const expanded = open && narrowNavigation.matches;
+    mainMenu.classList.toggle("is-open", expanded);
+    menuButton.setAttribute("aria-expanded", String(expanded));
+    menuButton.setAttribute("aria-label", expanded ? "关闭菜单" : "打开菜单");
+    if (returnFocus) menuButton.focus();
+}
+
+function updateMenuLayout() {
+    setMenuOpen(false);
+    if (narrowNavigation.matches) {
+        topNav.append(mainMenu);
+    } else {
+        topNav.insertBefore(mainMenu, document.querySelector(".auth-actions"));
+    }
+}
+
+menuButton.addEventListener("click", () => {
+    setMenuOpen(menuButton.getAttribute("aria-expanded") !== "true");
+});
+mainMenu.addEventListener("click", event => {
+    if (event.target.closest("a")) setMenuOpen(false, narrowNavigation.matches);
+});
+document.addEventListener("click", event => {
+    if (!topNav.contains(event.target)) setMenuOpen(false);
+});
+document.addEventListener("keydown", event => {
+    if (event.key === "Escape" && mainMenu.classList.contains("is-open")) {
+        setMenuOpen(false, true);
+    }
+});
+topNav.addEventListener("focusout", event => {
+    if (!topNav.contains(event.relatedTarget)) setMenuOpen(false);
+});
+narrowNavigation.addEventListener("change", updateMenuLayout);
+window.addEventListener("pageshow", () => setMenuOpen(false));
+updateMenuLayout();
